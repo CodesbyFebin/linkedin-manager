@@ -1,10 +1,9 @@
 <p align="center">
-  <img src="assets/linkedin-skills-hero.png" alt="36 Claude Code and Codex skills for LinkedIn marketing — open source, MIT licensed" width="900" />
-</p>
+ 
 
 # LinkedIn Manager
 
-> **CodesbyFebin LinkedIn Manager.** Maintained derivative of [sergebulaev/linkedin-skills](https://github.com/sergebulaev/linkedin-skills) v1.1.16 (MIT, Copyright (c) 2026 Sergey Bulaev). Skill contracts, research files, and draft-approve flow are preserved. This repo is the CodesbyFebin install surface: plugin id `linkedin-manager`, operator overlay in `references/operator-codesbyfebin.md`, architecture notes in `ANALYSIS.md`. Nothing publishes without an explicit yes.
+> **CodesbyFebin LinkedIn Manager.**Skill contracts, research files, and draft-approve flow are preserved. This repo is the CodesbyFebin install surface: plugin id `linkedin-manager`, operator overlay in `references/operator-codesbyfebin.md`, architecture notes in `ANALYSIS.md`. Nothing publishes without an explicit yes.
 
 Upstream title: LinkedIn Marketing Skills for Claude Code and Codex.
 
