@@ -1,0 +1,21 @@
+name: Ready
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  ready:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Byte-compile libraries
+        run: python3 -m compileall -q lib scripts tests
+      - name: No tracked secrets
+        run: python3 scripts/check_no_secrets.py
+      - name: Skill contracts
+        run: python3 -m pip install --quiet pyyaml && python3 scripts/check_frontmatter.py
