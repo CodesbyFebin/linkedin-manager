@@ -1,0 +1,38 @@
+{
+  "name": "linkedin-manager",
+  "owner": {
+    "name": "Febin Francis (CodesbyFebin)",
+    "url": "https://github.com/CodesbyFebin"
+  },
+  "metadata": {
+    "description": "CodesbyFebin LinkedIn Manager. Maintained MIT derivative of Serge Bulaev linkedin-skills v1.1.16: 12 Claude Code and Codex skills for draft-and-approve LinkedIn publishing."
+  },
+  "plugins": [
+    {
+      "name": "linkedin-manager",
+      "source": "./",
+      "description": "Bundle of 12 LinkedIn marketing skills for Claude Code and Codex with verified 2026 hook formulas, comment + reply templates that earn author replies, a unified humanizer (rewrite + `--mode audit` pre-publish check, plus bundled emoji-detector, detector-spread tester, rule-explainer sub-tools), profile rewriter, content planner, employee advocacy playbook, thread monitor (warm-reply window author-reply tracking), and engager analytics (likers + commenters ICP segmentation), interviewer (Story Bank of receipts, turning points and positions).",
+      "version": "1.0.0",
+      "author": {
+        "name": "Febin Francis",
+        "url": "https://github.com/CodesbyFebin"
+      },
+      "homepage": "https://github.com/CodesbyFebin/linkedin-manager",
+      "license": "MIT",
+      "keywords": [
+        "linkedin",
+        "marketing",
+        "social-media",
+        "content-creation",
+        "claude-skills",
+        "codex-skills",
+        "anthropic",
+        "ai-agents",
+        "personal-branding",
+        "b2b",
+        "viral-content"
+      ],
+      "category": "productivity"
+    }
+  ]
+}

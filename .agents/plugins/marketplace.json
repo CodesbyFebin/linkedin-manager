@@ -1,0 +1,20 @@
+{
+  "name": "linkedin-manager",
+  "interface": {
+    "displayName": "LinkedIn Manager"
+  },
+  "plugins": [
+    {
+      "name": "linkedin-manager",
+      "source": {
+        "source": "local",
+        "path": "./.codex-marketplace/linkedin-manager"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

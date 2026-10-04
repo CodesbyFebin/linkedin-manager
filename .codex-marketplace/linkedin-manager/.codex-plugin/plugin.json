@@ -1,0 +1,44 @@
+{
+  "name": "linkedin-manager",
+  "description": "12 Claude Code and Codex skills for LinkedIn marketing: post writing, comment drafting, reply handler (single + whole-thread sweep), hook extractor, humanizer (rewrite + audit + emoji + detector + rules sub-tools), profile optimizer, content planner, content repurposer, employee advocacy, thread monitor (author replies), engager analytics (likers + commenters ICP segmentation), interviewer (Story Bank of receipts, turning points and positions).",
+  "version": "1.0.0",
+  "author": {
+    "name": "Febin Francis",
+    "url": "https://github.com/CodesbyFebin"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/CodesbyFebin/linkedin-manager",
+  "repository": "https://github.com/CodesbyFebin/linkedin-manager",
+  "keywords": [
+    "linkedin-manager",
+    "codesbyfebin",
+    "linkedin",
+    "marketing",
+    "social-media",
+    "content",
+    "claude-skills",
+    "codex-skills",
+    "viral"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "LinkedIn Manager",
+    "composerIcon": "./assets/icon.svg",
+    "shortDescription": "LinkedIn Manager for Claude Code and Codex. Draft, audit, approve.",
+    "longDescription": "A bundle of 12 LinkedIn marketing skills for Claude Code and Codex: post writing, comment drafting, reply handling, hook extraction, humanizing, profile optimization, content planning, employee advocacy, thread monitoring, and engager analytics.",
+    "developerName": "CodesbyFebin",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/CodesbyFebin/linkedin-manager",
+    "defaultPrompt": [
+      "Draft a LinkedIn post from my notes.",
+      "Improve this LinkedIn comment.",
+      "Plan a week of LinkedIn content."
+    ],
+    "brandColor": "#00ff00"
+  }
+}
