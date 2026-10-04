@@ -19,3 +19,5 @@ jobs:
         run: python3 scripts/check_no_secrets.py
       - name: Skill contracts
         run: python3 -m pip install --quiet pyyaml && python3 scripts/check_frontmatter.py
+      - name: Local gate and job fit
+        run: python3 -m unittest tests.test_approval_gate tests.test_job_fit -v

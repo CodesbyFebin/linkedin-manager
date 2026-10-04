@@ -1,26 +1,22 @@
 <p align="center">
- 
+  <img src="assets/social-preview.png" alt="CodesbyFebin LinkedIn Manager. 40 agent skills. Draft, audit, approve." width="900" />
+</p>
 
 # LinkedIn Manager
 
-> **CodesbyFebin LinkedIn Manager.**Skill contracts, research files, and draft-approve flow are preserved. This repo is the CodesbyFebin install surface: plugin id `linkedin-manager`, operator overlay in `references/operator-codesbyfebin.md`, architecture notes in `ANALYSIS.md`. Nothing publishes without an explicit yes.
-
-Upstream title: LinkedIn Marketing Skills for Claude Code and Codex.
-
+CodesbyFebin agent desk for LinkedIn, X, Instagram, YouTube, and WhatsApp. Draft, show the draft, wait for yes. Nothing publishes without that word.
 
 <p align="center">
-  <img src="https://img.shields.io/github/v/release/CodesbyFebin/linkedin-manager?color=1E40AF&label=release" alt="Latest release">
+  <img src="https://img.shields.io/github/v/release/CodesbyFebin/linkedin-manager?color=00ff00&label=release" alt="Latest release">
   <img src="https://img.shields.io/badge/Claude_Code-Compatible-D97757?logo=anthropic&logoColor=white" alt="Claude Code Compatible">
   <img src="https://img.shields.io/badge/Codex-Compatible-111827" alt="Codex Compatible">
-  <img src="https://img.shields.io/badge/Claude-Skills-8A63D2" alt="Claude Skills">
+  <img src="https://img.shields.io/badge/skills-40-00ff00" alt="40 skills">
   <img src="https://img.shields.io/badge/License-MIT-22C55E.svg" alt="MIT License">
-  <img src="https://img.shields.io/github/stars/CodesbyFebin/linkedin-manager?style=social" alt="GitHub stars">
-  <img src="https://img.shields.io/badge/PRs-welcome-F59E0B.svg" alt="PRs Welcome">
 </p>
 
-**Claude skills for LinkedIn.** 36 Claude Code and Codex skills that write LinkedIn posts, comments, and replies in your voice. They draft content, strip AI tells, and wait for your approval before anything gets published. No coding required.
+Plugin id `linkedin-manager`. Operator overlay: `references/operator-codesbyfebin.md`. Architecture: `ANALYSIS.md`. Skill index: `SKILLS.md`.
 
-> **Other desks in this repo:** `agent-x-desk`, `agent-instagram-desk`, `agent-youtube-desk`, `agent-whatsapp-desk`. Same rule: draft, show, wait for yes. No board scrape. No autopilot.
+> Other desks: `agent-x-desk`, `agent-instagram-desk`, `agent-youtube-desk`, `agent-whatsapp-desk`. No board scrape. No autopilot.
 
 ## CodesbyFebin desk (9 added)
 

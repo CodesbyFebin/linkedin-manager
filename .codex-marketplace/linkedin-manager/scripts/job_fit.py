@@ -44,6 +44,7 @@ def main() -> int:
         print(f"| {k} | {v or 'missing'} |")
     if len(sys.argv) < 3:
         print("\nNo profile file. Fit not scored. Paste a profile to compare.")
+        print("Do not apply from this script.")
         return 0
     profile = Path(sys.argv[2]).read_text(encoding="utf-8")
     overlap = tokens(job) & tokens(profile)

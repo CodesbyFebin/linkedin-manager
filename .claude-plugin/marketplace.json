@@ -12,7 +12,7 @@
       "name": "linkedin-manager",
       "source": "./",
       "description": "40 CodesbyFebin agent skills for LinkedIn, X, Instagram, YouTube, and WhatsApp. Draft, audit, approve. No scraping. No autopilot.",
-      "version": "1.4.0",
+      "version": "1.4.1",
       "author": {
         "name": "Febin Francis",
         "url": "https://github.com/CodesbyFebin"
