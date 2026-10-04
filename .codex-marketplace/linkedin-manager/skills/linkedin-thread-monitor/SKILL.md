@@ -44,7 +44,7 @@ Output format (daily report, warm-thread preview, weekly roll-up): see `referenc
 
 ## Warm-reply window
 
-Anchored to a 2026-04 data point: a CEO replied to Serge's comment 22h after the original post. Reply-rate distribution: 0-6h 70%, 6-24h 25% (higher quality), >24h rare. Follow-up timing: 0-6h reply respond within 90 min; 6-24h within 2h; >24h within 4h before it goes cold. See `references/thread-timing.md` for the full matrix.
+Anchored to a 2026-04 data point: a post author replied to the operator's comment 22h after the original post. Reply-rate distribution: 0-6h 70%, 6-24h 25% (higher quality), >24h rare. Follow-up timing: 0-6h reply respond within 90 min; 6-24h within 2h; >24h within 4h before it goes cold. See `references/thread-timing.md` for the full matrix.
 
 ## Inbound-quality signals
 
