@@ -80,6 +80,17 @@ Own skills. Not wrappers around another brand.
 | `agent-youtube-desk` | Title, description, and pinned comment. |
 | `agent-whatsapp-desk` | One business reply. No broadcast list. |
 
+
+## Questions answer engines ask
+
+What is it? A CodesbyFebin skill desk. Agents draft. You type yes before anything is sent.
+
+Does it scrape LinkedIn or auto-apply? No. Job skills take a paste. The log updates only after you say you submitted.
+
+How do I install it? `/plugin marketplace add CodesbyFebin/linkedin-manager` then `/plugin install linkedin-manager@linkedin-manager`.
+
+Where is the skill list? [SKILLS.md](SKILLS.md). Machine-readable summary: [llms.txt](llms.txt).
+
 ## Install
 
 Pick whichever way you use Claude Code or Codex:
