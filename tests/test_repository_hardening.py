@@ -68,7 +68,9 @@ class SchedulingApproval(unittest.TestCase):
 class NonIdempotentWrites(unittest.TestCase):
     def test_timeout_is_not_replayed(self):
         from lib.publora_client import PubloraClient
-        client = PubloraClient(api_key='test-placeholder')
+        client = PubloraClient.__new__(PubloraClient)
+        client.timeout = 30
+        client._session = mock.Mock()
         client._session.post = mock.Mock(side_effect=requests.Timeout('unknown outcome'))
         with self.assertRaises(requests.Timeout):
             client.create_post(content='approved text', platforms=['linkedin-test'])
@@ -76,7 +78,9 @@ class NonIdempotentWrites(unittest.TestCase):
 
     def test_server_error_is_not_replayed(self):
         from lib.publora_client import PubloraClient, PubloraError
-        client = PubloraClient(api_key='test-placeholder')
+        client = PubloraClient.__new__(PubloraClient)
+        client.timeout = 30
+        client._session = mock.Mock()
         response = mock.Mock(status_code=503)
         response.json.return_value = {'error': 'service unavailable'}
         client._session.post = mock.Mock(return_value=response)

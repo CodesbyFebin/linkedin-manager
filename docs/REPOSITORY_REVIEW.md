@@ -26,6 +26,7 @@ Upgrade manifest version: 1.4.3. A versioned manifest is not a published release
 
 - 136 offline unit tests pass, including approval refusal/confirmation, dry-run, timezone handling, non-replayed POST failures, catalog fidelity, manifest parity, symlink targets, and template privacy.
 - Library import smoke test, byte compilation, frontmatter, Markdown reference validation, catalog freshness, credential wiring in offline mode, tracked secret scan, and selftest --offline pass.
+- HOL Plugin Scanner 3.16.2 passes locally with zero high or critical findings. Remaining medium warnings concern recognized dependency-lockfile naming; optional Cisco deep analysis was unavailable. The initial scan flagged a dummy test key; the test now uses an uninitialized client with a mocked transport and no credential string.
 - Social preview asset is 1280 × 640, 34,810 bytes. This validates the repository file, not GitHub's social-preview upload endpoint.
 - Remote Apify schema validation passes: five intercepted calls across four actors, with all supplied keys declared and required keys set. This validates public input schemas, not live account behavior.
 
