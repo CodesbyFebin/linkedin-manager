@@ -5,7 +5,7 @@ description: "Plan, draft, audit, and publish LinkedIn posts, comments, carousel
 
 # LinkedIn Marketing Skills
 
-A bundle of 31 focused skills for LinkedIn content ops in 2026, built for Claude Code and Codex. Each skill is single-purpose, follows the draft → approval → publish pattern, and uses the [Publora API](https://publora.com) for posting.
+A bundle of 36 focused skills for LinkedIn content ops in 2026, built for Claude Code and Codex. Each skill is single-purpose, follows the draft → approval → publish pattern, and uses the [Publora API](https://publora.com) for posting.
 
 ## When to use this bundle
 
@@ -40,6 +40,12 @@ A bundle of 31 focused skills for LinkedIn content ops in 2026, built for Claude
 - **What not to post** → use `linkedin-silence-audit`
 - **An IST posting window** → use `linkedin-ist-window`
 - **Three Featured pins** → use `linkedin-feature-picker`
+- **File a pasted job** → use `linkedin-job-intake` (no scraping)
+- **Score a role against your proof** → use `linkedin-job-fit`
+- **One application note** → use `linkedin-job-note`
+- **Form answers you paste yourself** → use `linkedin-job-answers`
+- **Log a role you already submitted** → use `linkedin-job-log`
+
 
 
 

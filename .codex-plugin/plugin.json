@@ -1,7 +1,7 @@
 {
   "name": "linkedin-manager",
-  "description": "31 Claude Code and Codex skills for LinkedIn. Draft, audit, approve. Includes the approval gate, carousel, newsletter, case receipt, headline lab, hook lab, correction, and IST window. Nothing sends without an explicit yes.",
-  "version": "1.2.0",
+  "description": "36 Claude Code and Codex skills for LinkedIn. Draft, audit, approve. Includes a job hunter desk that scores pasted roles and drafts notes. No scraping. No auto-apply. Nothing sends without an explicit yes.",
+  "version": "1.3.0",
   "author": {
     "name": "Febin Francis",
     "url": "https://github.com/CodesbyFebin"
