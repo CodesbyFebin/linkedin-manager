@@ -1,0 +1,12 @@
+# LinkedIn Manager
+> CodesbyFebin agent skills for LinkedIn, X, Instagram, YouTube, and WhatsApp. Draft, audit, approve. No autopilot.
+
+Repo: https://github.com/CodesbyFebin/linkedin-manager
+Index: https://github.com/CodesbyFebin/linkedin-manager/blob/main/SKILLS.md
+License: MIT
+Maintainer: Febin Francis (CodesbyFebin)
+
+## Use
+Install in Claude Code with /plugin marketplace add CodesbyFebin/linkedin-manager
+Skills draft. They publish only after the operator types yes.
+Job skills do not scrape boards and do not submit applications.

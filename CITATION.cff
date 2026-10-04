@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+title: LinkedIn Manager
+message: If you use this skill desk, cite it as below.
+type: software
+authors:
+  - family-names: Francis
+    given-names: Febin
+    alias: CodesbyFebin
+repository-code: https://github.com/CodesbyFebin/linkedin-manager
+url: https://codesbyfebin.github.io/linkedin-manager/
+license: MIT
+version: 1.4.2
+date-released: 2026-10-04
+keywords:
+  - linkedin
+  - agent-skills
+  - claude-code
+  - codesbyfebin
