@@ -34,8 +34,7 @@ otherwise.
 
 ## Commits
 
-- Primary author **must** be Sergey: every `git commit` needs
-  `--author="Sergey Bulaev <s@bulaev.org>"`. The harness defaults to the
+- Primary author is Febin Francis. Commits use the CodesbyFebin GitHub identity. The harness defaults to the
   Claude identity if you forget; verify with
   `git log -1 --format='%an <%ae>'` before pushing.
 - Co-author trailer (`Co-Authored-By: Claude ...`) is fine and welcomed.

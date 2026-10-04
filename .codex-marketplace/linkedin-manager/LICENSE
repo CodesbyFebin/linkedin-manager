@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2026 Sergey Bulaev
+Copyright (c) 2026 Febin Francis (CodesbyFebin)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -20,11 +20,4 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
----
-
-Derivative distribution notice
-Copyright (c) 2026 Febin Francis (CodesbyFebin)
-
-This repository is a maintained derivative of linkedin-skills by Sergey Bulaev.
-The original MIT copyright and permission notice above remain in force.
-Upstream: https://github.com/sergebulaev/linkedin-skills
+Third-party notice for unmodified derived portions: see NOTICE.

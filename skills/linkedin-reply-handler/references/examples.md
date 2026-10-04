@@ -8,7 +8,7 @@
 >
 > User: "post"
 >
-> Skill: react APPRECIATION on the author's reply → pause 12s → post reply with parentComment set to Serge's original comment URN (the TOP level, not the author's reply).
+> Skill: react APPRECIATION on the author's reply → pause 12s → post reply with parentComment set to the operator's original comment URN (the TOP level, not the author's reply).
 
 ## Example — whole thread
 

@@ -1,10 +1,9 @@
 <p align="center">
-  <img src="assets/linkedin-skills-hero.png" alt="36 Claude Code and Codex skills for LinkedIn marketing — open source, MIT licensed" width="900" />
-</p>
+ 
 
 # LinkedIn Manager
 
-> **CodesbyFebin LinkedIn Manager.** Maintained derivative of [sergebulaev/linkedin-skills](https://github.com/sergebulaev/linkedin-skills) v1.1.16 (MIT, Copyright (c) 2026 Sergey Bulaev). Skill contracts, research files, and draft-approve flow are preserved. This repo is the CodesbyFebin install surface: plugin id `linkedin-manager`, operator overlay in `references/operator-codesbyfebin.md`, architecture notes in `ANALYSIS.md`. Nothing publishes without an explicit yes.
+> **CodesbyFebin LinkedIn Manager.**Skill contracts, research files, and draft-approve flow are preserved. This repo is the CodesbyFebin install surface: plugin id `linkedin-manager`, operator overlay in `references/operator-codesbyfebin.md`, architecture notes in `ANALYSIS.md`. Nothing publishes without an explicit yes.
 
 Upstream title: LinkedIn Marketing Skills for Claude Code and Codex.
 
@@ -21,7 +20,7 @@ Upstream title: LinkedIn Marketing Skills for Claude Code and Codex.
 
 **Claude skills for LinkedIn.** 36 Claude Code and Codex skills that write LinkedIn posts, comments, and replies in your voice. They draft content, strip AI tells, and wait for your approval before anything gets published. No coding required.
 
-> **On another platform too?** The same team ships matching marketing skill bundles for [X (Twitter)](https://github.com/sergebulaev/x-skills) · [Instagram](https://github.com/sergebulaev/instagram-skills) · [YouTube](https://github.com/sergebulaev/youtube-skills) · [TikTok](https://github.com/sergebulaev/tiktok-skills) · [Threads](https://github.com/sergebulaev/threads-skills) · [Facebook](https://github.com/sergebulaev/facebook-skills). Same voice engine, same approve-before-publish flow.
+> **Other desks in this repo:** `agent-x-desk`, `agent-instagram-desk`, `agent-youtube-desk`, `agent-whatsapp-desk`. Same rule: draft, show, wait for yes. No board scrape. No autopilot.
 
 ## CodesbyFebin desk (9 added)
 
@@ -73,6 +72,17 @@ Five skills. They do not scrape boards and they do not click Apply.
 | `linkedin-job-log` | Ledger only after you say you submitted |
 
 `python3 scripts/job_fit.py job.txt profile.txt` stays offline.
+
+## Agent desks
+
+Own skills. Not wrappers around another brand.
+
+| Desk | Job |
+|---|---|
+| `agent-x-desk` | One post or a 4-line thread. 280-char gate. |
+| `agent-instagram-desk` | Caption plus alt text. No hashtag wall. |
+| `agent-youtube-desk` | Title, description, and pinned comment. |
+| `agent-whatsapp-desk` | One business reply. No broadcast list. |
 
 ## Install
 
@@ -451,7 +461,7 @@ python lib/url_parser.py "https://www.linkedin.com/posts/<author-handle>_activit
 
 ## Who builds this
 
-These skills come out of [Creative Content Crafts](https://cccrafts.ai), an engineering company. We build the machinery underneath a company's public voice: ICP parsing, engagement systems, content guardrails, and posting infrastructure. We do not sell the words themselves.
+Maintained by [CodesbyFebin](https://github.com/CodesbyFebin). Systems that prove what happened.
 
 We call that layer **content engineering**. Writing collapsed to the price of a chat subscription. What stayed valuable is everything below it: pulling every post your market wrote this week, keeping a live list of the people who matter, engaging on it daily with judgment in the loop, and catching the risky drafts before the platform does.
 
@@ -468,11 +478,5 @@ MIT. Powered by [Publora](https://publora.com).
 Part of a family of AI social-media marketing skill bundles for Claude Code and Codex:
 
 - **linkedin-skills - LinkedIn (this repo)**
-- [x-skills](https://github.com/sergebulaev/x-skills) - X (Twitter)
-- [instagram-skills](https://github.com/sergebulaev/instagram-skills) - Instagram
-- [youtube-skills](https://github.com/sergebulaev/youtube-skills) - YouTube
-- [threads-skills](https://github.com/sergebulaev/threads-skills) - Threads
-- [tiktok-skills](https://github.com/sergebulaev/tiktok-skills) - TikTok
-- [facebook-skills](https://github.com/sergebulaev/facebook-skills) - Facebook Pages
 
 Also: [Anthropic Skills repo](https://github.com/anthropics/skills), the `awesome-claude-skills` directory.

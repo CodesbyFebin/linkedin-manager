@@ -1,18 +1,18 @@
 {
   "name": "linkedin-manager",
   "owner": {
-    "name": "Febin Francis (CodesbyFebin)",
+    "name": "CodesbyFebin",
     "url": "https://github.com/CodesbyFebin"
   },
   "metadata": {
-    "description": "36 Claude Code and Codex skills for LinkedIn. Draft, audit, approve. Includes a job hunter desk that scores pasted roles and drafts notes. No scraping. No auto-apply. Nothing sends without an explicit yes."
+    "description": "40 CodesbyFebin agent skills for LinkedIn, X, Instagram, YouTube, and WhatsApp. Draft, audit, approve. No scraping. No autopilot."
   },
   "plugins": [
     {
       "name": "linkedin-manager",
       "source": "./",
-      "description": "36 Claude Code and Codex skills for LinkedIn. Draft, audit, approve. Includes a job hunter desk that scores pasted roles and drafts notes. No scraping. No auto-apply. Nothing sends without an explicit yes.",
-      "version": "1.3.0",
+      "description": "40 CodesbyFebin agent skills for LinkedIn, X, Instagram, YouTube, and WhatsApp. Draft, audit, approve. No scraping. No autopilot.",
+      "version": "1.4.0",
       "author": {
         "name": "Febin Francis",
         "url": "https://github.com/CodesbyFebin"

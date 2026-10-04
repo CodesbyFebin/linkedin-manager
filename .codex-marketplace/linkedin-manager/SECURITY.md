@@ -19,7 +19,7 @@ privately:
 
 - **Preferred:** open a private report via
   [GitHub Security Advisories](https://github.com/CodesbyFebin/linkedin-manager/security/advisories/new)
-- **Alternative:** email `s@bulaev.org` with subject `[SECURITY] linkedin-skills`
+- **Alternative:** open a private security advisory on this GitHub repo
 
 Please include:
 
