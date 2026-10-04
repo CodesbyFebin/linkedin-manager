@@ -1,6 +1,6 @@
 ---
 name: agent-whatsapp-desk
-description: "Draft one WhatsApp Business reply to a message the user pasted. Use for a single chat. Refuses broadcasts and contact-list sends."
+description: "Draft one WhatsApp Business reply to a message the user pasted. Use for a single chat. Refuses broadcasts and contact-list sends. Not for LinkedIn replies (use linkedin-reply-handler)."
 ---
 
 # WhatsApp desk

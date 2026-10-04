@@ -1,6 +1,6 @@
 ---
 name: linkedin-approval-gate
-description: "Run the pre-publish gate on a draft before any post, comment, reply, invite, poll, or caption goes out. Scores length, hook, filler, em dashes, secrets, and links. Never publishes. Use when the user says check this, approve this, or is this safe to post."
+description: "Run the pre-publish gate on a draft before any post, comment, reply, invite, poll, or caption goes out. Scores length, hook, filler, em dashes, secrets, and links. Never publishes. Use when the user says check this, approve this, or is this safe to post. Not for rewriting drafts (use linkedin-humanizer)."
 ---
 
 # Approval gate

@@ -1,6 +1,6 @@
 ---
 name: linkedin-experience-bullet
-description: "Rewrite one experience entry into four proof bullets. Use for a single role, not a full profile audit."
+description: "Rewrite one experience entry into four proof bullets. Use for a single role, not a full profile audit. Use linkedin-profile-optimizer for the whole profile."
 ---
 
 # Experience bullets

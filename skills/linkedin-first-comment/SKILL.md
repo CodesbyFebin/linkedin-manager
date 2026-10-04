@@ -1,6 +1,6 @@
 ---
 name: linkedin-first-comment
-description: "Draft the first comment that holds the link for an approved post. Use after a post is approved and needs a URL out of the body."
+description: "Draft the first comment that holds the link for an approved post. Use after a post is approved and needs a URL out of the body. Not for comments on other posts (use linkedin-comment-drafter)."
 ---
 
 # First comment

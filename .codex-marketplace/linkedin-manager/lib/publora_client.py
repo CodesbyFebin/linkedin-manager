@@ -18,8 +18,8 @@ Auth header: x-publora-key: sk_...
 
 Design note: this client is deliberately minimal. Skills call exactly one
 method per action, after the user has approved a draft rendered via
-`lib/approval.py`. All write methods retry on transient 408/429/5xx via the
-shared retry decorator.
+`lib/approval.py`. POST writes are sent once. A timeout or server error can follow acceptance;
+inspect account state before deciding whether to retry.
 """
 from __future__ import annotations
 import os
@@ -315,7 +315,6 @@ class PubloraClient:
 
     # ---- Internals --------------------------------------------------------
 
-    @_retry()
     def _post(self, path: str, json_body: dict[str, Any]) -> dict[str, Any]:
         r = self._session.post(
             self.BASE_URL + path, json=json_body, timeout=self.timeout

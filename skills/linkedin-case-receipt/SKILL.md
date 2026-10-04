@@ -20,6 +20,8 @@ A post that can survive a skeptic. Built for operators who ship systems.
 5. Show the draft and the missing-evidence list. Wait for post.
 
 ## Hard rules
+
+Global voice rules: see root SKILL.md Voice rules.
 - No emoji. No hashtag block.
 - Name the system only if the user named it.
 - If the evidence is a private log, paraphrase. Do not ask the user to paste secrets.

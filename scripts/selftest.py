@@ -23,6 +23,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import hashlib
 import os
 import pathlib
 import shutil
@@ -111,14 +112,18 @@ def phase_install(root: pathlib.Path) -> Phase:
         # commit: uncommitted work in progress is not the same thing as a stale
         # generated package, and conflating them cries wolf on every branch.
         def state():
-            out = subprocess.run(["git", "status", "--porcelain", ".codex-marketplace"],
-                                 cwd=root, capture_output=True, text=True).stdout
-            return {line[3:] for line in out.splitlines()}
+            package = root / ".codex-marketplace"
+            return {str(p.relative_to(package)): hashlib.sha256(p.read_bytes()).hexdigest()
+                    for p in package.rglob("*") if p.is_file()
+                    and "__pycache__" not in p.parts and p.suffix != ".pyc"}
 
         before = state()
-        subprocess.run([sys.executable, str(sync)], cwd=root, capture_output=True, timeout=120)
-        changed = state() - before
-        if not changed:
+        result = subprocess.run([sys.executable, str(sync)], cwd=root, capture_output=True, timeout=120)
+        after = state()
+        changed = {p for p in before.keys() | after.keys() if before.get(p) != after.get(p)}
+        if result.returncode:
+            phase.add(FAIL, "codex package sync", "sync script failed")
+        elif not changed:
             phase.add(PASS, "codex package in sync", "regenerating it changes nothing")
         else:
             phase.add(FAIL, "codex package in sync",
@@ -237,7 +242,7 @@ def phase_accounts(offline: bool) -> tuple[Phase, dict]:
 
 
 # ----------------------------------------------------------------- tests ----
-def phase_tests(root: pathlib.Path) -> Phase:
+def phase_tests(root: pathlib.Path, offline: bool = False) -> Phase:
     phase = Phase("Tests")
     if not (root / "tests").is_dir():
         phase.add(WARN, "suite", "no tests/ directory in this checkout")
@@ -258,6 +263,9 @@ def phase_tests(root: pathlib.Path) -> Phase:
                           ("check_frontmatter.py", "skill frontmatter"),
                           ("check_markdown_references.py", "markdown references"),
                           ("check_no_secrets.py", "no tracked credentials")):
+        if offline and script == "check_actor_inputs.py":
+            phase.add(SKIP, label, "offline: remote schema check not run")
+            continue
         path = root / "scripts" / script
         if not path.is_file():
             continue
@@ -270,6 +278,34 @@ def phase_tests(root: pathlib.Path) -> Phase:
 
 # -------------------------------------------------------------- coverage ----
 NEEDS = {
+    "agent-instagram-desk": (),
+    "agent-whatsapp-desk": (),
+    "agent-x-desk": (),
+    "agent-youtube-desk": (),
+    "linkedin-analytics-review": (),
+    "linkedin-approval-gate": (),
+    "linkedin-carousel-writer": (),
+    "linkedin-case-receipt": (),
+    "linkedin-connection-note": (),
+    "linkedin-correction": (),
+    "linkedin-cta-lab": (),
+    "linkedin-event-note": (),
+    "linkedin-experience-bullet": (),
+    "linkedin-feature-picker": (),
+    "linkedin-first-comment": (),
+    "linkedin-headline-lab": (),
+    "linkedin-hook-lab": (),
+    "linkedin-ist-window": (),
+    "linkedin-job-answers": (),
+    "linkedin-job-fit": (),
+    "linkedin-job-intake": (),
+    "linkedin-job-log": (),
+    "linkedin-job-note": (),
+    "linkedin-newsletter": (),
+    "linkedin-poll-writer": (),
+    "linkedin-quote-comment": (),
+    "linkedin-series-builder": (),
+    "linkedin-silence-audit": (),
     "linkedin-comment-drafter":   ("apify", "publora"),
     "linkedin-content-planner":   (),
     "linkedin-employee-advocacy": ("publora",),
@@ -303,7 +339,7 @@ def phase_coverage(root: pathlib.Path, live: dict) -> Phase:
             degraded.append((skill, [l for l in needed if not live.get(l)]))
 
     phase.add(PASS, "no API needed", f"{len(standalone)}: " + ", ".join(s.split("-", 1)[1] for s in standalone))
-    phase.add(PASS if full else SKIP, "fully automatic",
+    phase.add(PASS if full else SKIP, "API layers available",
               f"{len(full)}: " + (", ".join(s.split("-", 1)[1] for s in full) if full else "none"))
     for skill, missing in degraded:
         phase.add(WARN, "  " + skill.split("-", 1)[1], f"falls back to manual (no {', '.join(missing)})")
@@ -475,7 +511,7 @@ def main() -> int:
     phases = [phase_install(root)]
     accounts, live = phase_accounts(args.offline)
     phases.append(accounts)
-    phases.append(phase_tests(root))
+    phases.append(phase_tests(root, offline=args.offline))
     phases.append(phase_coverage(root, live))
     if args.live and not args.offline:
         phases.append(phase_live(live, args.yes))

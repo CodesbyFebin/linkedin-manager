@@ -19,6 +19,8 @@ Interpret numbers the user already has. Do not fetch private analytics.
 5. Do not publish anything from this skill.
 
 ## Hard rules
+
+Global voice rules: see root SKILL.md Voice rules.
 - Do not invent a baseline the paste does not contain.
 - Do not tell the user to buy reach.
 

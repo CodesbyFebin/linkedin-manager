@@ -1,6 +1,6 @@
 ---
 name: linkedin-headline-lab
-description: "Write five LinkedIn headline options from a role and a proof. Use when the user wants a headline, not a full profile rewrite."
+description: "Write five LinkedIn headline options from a role and a proof. Use when the user wants a headline, not a full profile rewrite. Use linkedin-profile-optimizer for a full profile audit."
 ---
 
 # Headline lab

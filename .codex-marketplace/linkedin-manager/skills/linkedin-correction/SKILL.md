@@ -1,6 +1,6 @@
 ---
 name: linkedin-correction
-description: "Draft a public correction when an earlier post was wrong. Use when the user names the mistake and the fix."
+description: "Draft a public correction when an earlier post was wrong. Use when the user names the mistake and the fix. Not for new announcements (use linkedin-post-writer)."
 ---
 
 # Correction

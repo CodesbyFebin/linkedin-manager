@@ -80,6 +80,17 @@ Own skills. Not wrappers around another brand.
 | `agent-youtube-desk` | Title, description, and pinned comment. |
 | `agent-whatsapp-desk` | One business reply. No broadcast list. |
 
+
+## Questions answer engines ask
+
+What is it? A CodesbyFebin skill desk. Agents draft. You type yes before anything is sent.
+
+Does it scrape LinkedIn or auto-apply? No. Job skills take a paste. The log updates only after you say you submitted.
+
+How do I install it? `/plugin marketplace add CodesbyFebin/linkedin-manager` then `/plugin install linkedin-manager@linkedin-manager`.
+
+Where is the skill list? [SKILLS.md](SKILLS.md). Machine-readable summary: [llms.txt](llms.txt).
+
 ## Install
 
 Pick whichever way you use Claude Code or Codex:
@@ -156,7 +167,7 @@ git clone https://github.com/CodesbyFebin/linkedin-manager.git
 cd linkedin-manager
 ```
 
-The repo ships a `.claude/skills/` mirror of symlinks, so Claude Code finds all 12 skills on its own.
+The repo ships a `.claude/skills/` mirror of symlinks, so Claude Code finds all 40 skills on its own.
 
 ### Hermes Agent
 
@@ -205,7 +216,9 @@ Once installed, just ask Claude Code or Codex for help with LinkedIn. The right 
 
 Every skill shows you a draft first and waits for your OK before doing anything. Nothing gets posted without your approval.
 
-## The 12 skills
+## Core workflows
+
+The bundle ships **40 skills**. See the [complete linked skill catalog](SKILLS.md) for all writing, career, approval, and platform desks.
 
 | Skill | What it does |
 |---|---|
@@ -234,7 +247,7 @@ Just tell the Post Writer you are a founder, or ask the Content Planner for a "f
 
 ## Community skills
 
-Standalone skills built by other people on this bundle's conventions (same voice rules, same approval-card flow, same `Not for X (use Y)` disambiguation). They live in their authors' repos, so the core stays at 12 skills and one read/write pipeline. Install them next to this bundle the same way.
+Standalone skills built by other people on this bundle's conventions (same voice rules, same approval-card flow, same `Not for X (use Y)` disambiguation). They live in their authors' repos, so the bundle stays at 40 skills and one read/write pipeline. Install them next to this bundle the same way.
 
 - [linkedin-outreach](https://github.com/smfardeen7/linkedin-skills/tree/add-linkedin-outreach-skill/skills/linkedin-outreach) by [@smfardeen7](https://github.com/smfardeen7) - drafts 300-character connection-request notes (10 scenario templates) and post-accept follow-up sequences with day offsets and stop rules. Draft-only: LinkedIn has no invite or DM API, you paste and send.
 
@@ -295,7 +308,7 @@ They are not exclusive and neither is second-class. One caveat worth knowing: `s
 
 **Step 4.** Get your API key: click **Settings** (gear icon, bottom-left), then **API**, then **Create Key**. Copy the `sk_...` string.
 
-**Step 5.** Create a file called `.env` in the linkedin-skills folder:
+**Step 5.** Create a file called `.env` in the linkedin-manager folder:
 
 ```
 PUBLORA_API_KEY=sk_paste_your_key_here
@@ -328,7 +341,7 @@ Posts with a visual get more dwell time. The Post Writer can generate an illustr
 
 [Pixfaro](https://pixfaro.com) is a single image API over multiple models (from `flux-schnell` at $0.004 to `gpt-5-image`). It composites your handle, brand color, or logo onto the image as a **pixel-exact overlay**, so a cheap base model still renders crisp text on a quote-card or thumbnail. Pull those brand fields from your [Voice & Brand Profile](references/voice-profile.md) (section 6) and every asset stays on-brand.
 
-Setup: sign up at [api.pixfaro.com/signup](https://api.pixfaro.com/signup?ref=linkedin-skills), create a key (name it `linkedin`, scope **Generate**), and put `PIXFARO_TOKEN=pf_live_...` in `.env` **at the root of the `linkedin-skills` folder** (next to this README; keys are shown once). Then `python3 scripts/check_config.py` calls Pixfaro's `GET /v1/key` and prints the key's name and scope when it is right. The thin client at `lib/pixfaro_client.py` and the wrappers `lib.illustrate(prompt, kind=...)` / `lib.refine(image_id, instruction)` return a hosted URL that flows straight into `lib.publish(..., media_urls=[url])`. `refine` edits a prior image by its id (cheaper than regenerating); results carry `cost`, `balance_after`, and a `premium` flag so the skills never quietly spend on a pricey model.
+Setup: sign up at [api.pixfaro.com/signup](https://api.pixfaro.com/signup?ref=linkedin-skills), create a key (name it `linkedin`, scope **Generate**), and put `PIXFARO_TOKEN=pf_live_...` in `.env` **at the root of the `linkedin-manager` folder** (next to this README; keys are shown once). Then `python3 scripts/check_config.py` calls Pixfaro's `GET /v1/key` and prints the key's name and scope when it is right. The thin client at `lib/pixfaro_client.py` and the wrappers `lib.illustrate(prompt, kind=...)` / `lib.refine(image_id, instruction)` return a hosted URL that flows straight into `lib.publish(..., media_urls=[url])`. `refine` edits a prior image by its id (cheaper than regenerating); results carry `cost`, `balance_after`, and a `premium` flag so the skills never quietly spend on a pricey model.
 
 For **text-led visuals** (a quote-card of your hook), the skills skip the image model entirely and use Pixfaro's design templates: `lib.quote_card("<hook>", handle="@you", style="brand")` typesets the card server-side (`POST /v1/renders`), so the line is crisp at any length — same hosted-URL flow. `lib.available_templates()` lists templates and live prices. A brand logo can be uploaded once with `lib.brand_logo("logo.png")` (full-scope key); the returned `logo_id` goes into Voice & Brand Profile §6 and every overlay from then on stamps the real mark.
 
@@ -348,9 +361,9 @@ Every skill follows these rules automatically:
 | Problem | Fix |
 |---|---|
 | Skills don't activate when I ask about LinkedIn | Make sure you installed via the Skills panel, `/plugin install`, or `codex plugin add`. Try starting a new conversation. |
-| "Publora API key not provided" | Your `.env` file is missing or in the wrong folder. It should be in the `linkedin-skills/` root. |
+| "Publora API key not provided" | Your `.env` file is missing or in the wrong folder. It should be in the `linkedin-manager/` root. |
 | "401 Unauthorized" from Publora | Your API key expired. Go to Publora Settings > API > Create a new key. |
-| Image skills keep saying "No Pixfaro key set" although you added one | The key was not loaded: `.env` must be at the `linkedin-skills/` root and `python-dotenv` installed. `python3 scripts/check_config.py` now says exactly which — and, with a key, whether Pixfaro accepts it (`GET /v1/key`). |
+| Image skills keep saying "No Pixfaro key set" although you added one | The key was not loaded: `.env` must be at the `linkedin-manager/` root and `python-dotenv` installed. `python3 scripts/check_config.py` now says exactly which — and, with a key, whether Pixfaro accepts it (`GET /v1/key`). |
 | "401" from Pixfaro | The key was copied short or revoked. Keys are shown once — mint a new one in the Pixfaro dashboard and paste the whole `pf_live_...` string. |
 | "404 on comment/post" | Your `LINKEDIN_PLATFORM_ID` is wrong. Go to Publora Channels and copy the full `linkedin-...` string. |
 | "400 reactionType" error | Known Publora quirk. The skills handle this automatically. If you're calling the API manually, use PRAISE (not CELEBRATE), INTEREST (not INSIGHTFUL). |
@@ -369,7 +382,7 @@ Every skill follows these rules automatically:
 ## Runtime compatibility
 
 ```
-linkedin-skills/
+linkedin-manager/
 ├── skills/          ← SKILL.md frontmatter; native to Claude Code and Codex, others read as markdown
 ├── .codex-marketplace/ ← generated nested Codex package (run scripts/sync_codex_marketplace.py)
 ├── lib/             ← pure Python, works in any agent runtime
@@ -403,7 +416,7 @@ git clone git@github.com:CodesbyFebin/linkedin-manager.git
 ### Generic Python agent quickstart
 
 ```python
-import sys; sys.path.insert(0, "path/to/linkedin-skills")
+import sys; sys.path.insert(0, "path/to/linkedin-manager")
 from lib import parse_linkedin_url, PubloraClient, ApifyClient
 
 parsed = parse_linkedin_url("https://www.linkedin.com/posts/slug-activity-7448808898326654978-iW20")
@@ -476,3 +489,13 @@ Part of a family of AI social-media marketing skill bundles for Claude Code and 
 - **linkedin-skills - LinkedIn (this repo)**
 
 Also: [Anthropic Skills repo](https://github.com/anthropics/skills), the `awesome-claude-skills` directory.
+
+## Maintainer checks and publishing
+
+`python3 scripts/build_catalog.py` regenerates the linked `SKILLS.md`, `skills.json`, `llms.txt`, and the static `/docs` catalog from parsed YAML. CI rejects stale catalogs and stale Codex packages. Run `python3 scripts/sync_codex_marketplace.py` after editing packaged sources.
+
+Enable GitHub Pages in Settings → Pages using branch `main` and folder `/docs`. The catalog includes its own social card, machine summary, JSON catalog, and sitemap. Committing these files does not enable Pages or configure the repository social preview. Upload `assets/social-preview.png` in the repository social preview settings.
+
+The scheduler defaults to `Asia/Kolkata`. Preview with `python3 scripts/schedule_post.py --file draft.txt --dry-run`; choose another IANA zone with `--timezone`. A live run prompts before scheduling. Use `--approved` only after the exact text, target account, and schedule have received explicit approval. Low-level `lib.publish` and client methods rely on caller approval.
+
+Publora POST requests are sent once. If a timeout or server error leaves the outcome uncertain, inspect account state before retrying to avoid duplicate posts or comments. This does not provide exactly-once delivery.

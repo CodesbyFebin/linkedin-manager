@@ -10,6 +10,7 @@ from __future__ import annotations
 import shutil
 import subprocess
 from pathlib import Path
+import re
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -49,6 +50,7 @@ def copy_path(src: Path, dest: Path) -> None:
             ignore = shutil.ignore_patterns(
                 "__pycache__",
                 "*.pyc",
+                "build_catalog.py",
                 "check_markdown_references.py",
                 "sync_codex_marketplace.py",
             )
@@ -67,9 +69,15 @@ def restore_templates(package_references: Path) -> list[str]:
     """
     restored = []
     for name in PERSONAL:
-        tracked = f".codex-marketplace/linkedin-skills/references/{name}"
+        tracked = f".codex-marketplace/linkedin-manager/references/{name}"
         blob = subprocess.run(["git", "show", f"HEAD:{tracked}"],
                               cwd=ROOT, capture_output=True, text=True)
+        if blob.returncode != 0:
+            # Bootstrap after a rename from the tracked root template, never disk.
+            blob = subprocess.run(["git", "show", f"HEAD:references/{name}"],
+                                  cwd=ROOT, capture_output=True, text=True)
+        if blob.returncode != 0 or not re.search(r"^\s*[-*]?\s*filled:\s*no\b", blob.stdout, re.M | re.I):
+            raise RuntimeError(f"Blank tracked template unavailable: {tracked}")
         if blob.returncode == 0:
             (package_references / name).write_text(blob.stdout, encoding="utf-8")
             restored.append(name)

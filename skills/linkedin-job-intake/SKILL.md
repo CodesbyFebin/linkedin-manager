@@ -1,6 +1,6 @@
 ---
 name: linkedin-job-intake
-description: "Parse a job the user pasted or saved. Use when a role needs to enter the hunter desk. Refuses live scraping, cookie login, and bulk board crawls."
+description: "Parse a job the user pasted or saved. Use when a role needs to enter the hunter desk. Refuses live scraping, cookie login, and bulk board crawls. Not for scoring role fit (use linkedin-job-fit)."
 ---
 
 # Job intake

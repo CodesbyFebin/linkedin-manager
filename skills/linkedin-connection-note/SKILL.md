@@ -1,6 +1,6 @@
 ---
 name: linkedin-connection-note
-description: "Draft one connection note or follow-up for a named person. Use when the user has a specific profile and a reason. Refuses bulk outreach and scraped lists."
+description: "Draft one connection note or follow-up for a named person. Use when the user has a specific profile and a reason. Refuses bulk outreach and scraped lists. Not for application notes (use linkedin-job-note)."
 ---
 
 # Connection note

@@ -23,6 +23,8 @@ Not for a single text post. Hand that to `linkedin-post-writer`.
 6. On approval, publish the caption via `lib.publish` only if the user also approved the caption. The slide file itself is returned for upload. This skill does not invent a file host.
 
 ## Hard rules
+
+Global voice rules: see root SKILL.md Voice rules.
 - No emoji. No hashtag block.
 - No "swipe to learn" filler.
 - Caption hook in the first 210 characters.

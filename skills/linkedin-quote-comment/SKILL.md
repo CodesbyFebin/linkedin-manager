@@ -1,6 +1,6 @@
 ---
 name: linkedin-quote-comment
-description: "Draft a comment on a post the user wants to quote or amplify. Use for one URL. Refuses a batch."
+description: "Draft a comment on a post the user wants to quote or amplify. Use for one URL. Refuses a batch. Not for threaded replies (use linkedin-reply-handler)."
 ---
 
 # Quote comment

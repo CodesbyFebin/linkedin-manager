@@ -5,14 +5,14 @@
     "url": "https://github.com/CodesbyFebin"
   },
   "metadata": {
-    "description": "40 CodesbyFebin agent skills for LinkedIn, X, Instagram, YouTube, and WhatsApp. Draft, audit, approve. No scraping. No autopilot."
+    "description": "40 CodesbyFebin agent skills for LinkedIn, X, Instagram, YouTube, and WhatsApp. Draft, audit, approve. Optional API reads; publishing requires approval."
   },
   "plugins": [
     {
       "name": "linkedin-manager",
       "source": "./",
-      "description": "40 CodesbyFebin agent skills for LinkedIn, X, Instagram, YouTube, and WhatsApp. Draft, audit, approve. No scraping. No autopilot.",
-      "version": "1.4.1",
+      "description": "40 CodesbyFebin agent skills for LinkedIn, X, Instagram, YouTube, and WhatsApp. Draft, audit, approve. Optional API reads; publishing requires approval.",
+      "version": "1.4.3",
       "author": {
         "name": "Febin Francis",
         "url": "https://github.com/CodesbyFebin"
