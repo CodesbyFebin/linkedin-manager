@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/linkedin-skills-hero.png" alt="21 Claude Code and Codex skills for LinkedIn marketing — open source, MIT licensed" width="900" />
+  <img src="assets/linkedin-skills-hero.png" alt="31 Claude Code and Codex skills for LinkedIn marketing — open source, MIT licensed" width="900" />
 </p>
 
 # LinkedIn Manager
@@ -19,7 +19,7 @@ Upstream title: LinkedIn Marketing Skills for Claude Code and Codex.
   <img src="https://img.shields.io/badge/PRs-welcome-F59E0B.svg" alt="PRs Welcome">
 </p>
 
-**Claude skills for LinkedIn.** 21 Claude Code and Codex skills that write LinkedIn posts, comments, and replies in your voice. They draft content, strip AI tells, and wait for your approval before anything gets published. No coding required.
+**Claude skills for LinkedIn.** 31 Claude Code and Codex skills that write LinkedIn posts, comments, and replies in your voice. They draft content, strip AI tells, and wait for your approval before anything gets published. No coding required.
 
 > **On another platform too?** The same team ships matching marketing skill bundles for [X (Twitter)](https://github.com/sergebulaev/x-skills) · [Instagram](https://github.com/sergebulaev/instagram-skills) · [YouTube](https://github.com/sergebulaev/youtube-skills) · [TikTok](https://github.com/sergebulaev/tiktok-skills) · [Threads](https://github.com/sergebulaev/threads-skills) · [Facebook](https://github.com/sergebulaev/facebook-skills). Same voice engine, same approve-before-publish flow.
 
@@ -40,6 +40,24 @@ The upstream loop is intact. These nine are original to this distribution:
 | `linkedin-approval-gate` | Pass/fail before anything goes out |
 
 Quick start with no keys: open the repo in Claude Code and ask for a case receipt. Tier 0 returns a paste block.
+
+
+## Ten more (v1.2.0)
+
+| Skill | Use |
+|---|---|
+| `linkedin-headline-lab` | Five headlines from a role and a proof |
+| `linkedin-first-comment` | The comment that holds the link |
+| `linkedin-hook-lab` | Five openings, no body |
+| `linkedin-quote-comment` | One post, one comment, no batch |
+| `linkedin-correction` | Public fix when an earlier claim was wrong |
+| `linkedin-event-note` | Talk or meetup, no fake scarcity |
+| `linkedin-experience-bullet` | Four proof bullets for one role |
+| `linkedin-silence-audit` | What not to post |
+| `linkedin-ist-window` | IST timing from a paste, or a labeled default |
+| `linkedin-feature-picker` | Three Featured pins you already shipped |
+
+The approval gate now runs `python3 scripts/approval_gate.py`. A passing table is not permission to publish.
 
 ## Install
 
