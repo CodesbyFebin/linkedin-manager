@@ -1,6 +1,6 @@
 ---
 name: agent-instagram-desk
-description: "Draft an Instagram caption and alt text. Use for one image the user already has. Refuses a scrape of a profile."
+description: "Draft an Instagram caption and alt text. Use for one image the user already has. Refuses a scrape of a profile. Not for LinkedIn text posts (use linkedin-post-writer)."
 ---
 
 # Instagram desk

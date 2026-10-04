@@ -1,6 +1,6 @@
 ---
 name: linkedin-job-note
-description: "Draft one application note or recruiter message for a single role. Use after job-fit. Never sends. Refuses a list of roles."
+description: "Draft one application note or recruiter message for a single role. Use after job-fit. Never sends. Refuses a list of roles. Not for connection requests (use linkedin-connection-note)."
 ---
 
 # Job note

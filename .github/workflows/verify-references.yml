@@ -20,6 +20,13 @@ jobs:
         run: python3 -m pip install --quiet -r requirements-dev.txt
       - name: Check SKILL.md frontmatter parses
         run: python3 scripts/check_frontmatter.py
+      - name: Check generated catalogs
+        run: python3 scripts/build_catalog.py --check
+      - name: Check marketplace package drift
+        run: |
+          python3 scripts/sync_codex_marketplace.py
+          git diff --exit-code -- .codex-marketplace
+          test -z "$(git ls-files --others --exclude-standard .codex-marketplace)"
       - name: Offline test suite
         run: python3 -m unittest discover -s tests -v
       - name: Check relative Markdown references

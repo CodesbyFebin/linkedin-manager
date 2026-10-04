@@ -1,6 +1,6 @@
 ---
 name: agent-x-desk
-description: "Draft one X post or a four-line thread for CodesbyFebin. Use for a short proof post. Refuses a scrape of a timeline and refuses to post without yes."
+description: "Draft one X post or a four-line thread for CodesbyFebin. Use for a short proof post. Refuses a scrape of a timeline and refuses to post without yes. Not for LinkedIn posts (use linkedin-post-writer)."
 ---
 
 # X desk

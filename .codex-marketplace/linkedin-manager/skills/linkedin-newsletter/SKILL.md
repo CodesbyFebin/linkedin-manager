@@ -1,6 +1,6 @@
 ---
 name: linkedin-newsletter
-description: "Draft a LinkedIn newsletter edition from a spine of receipts. Use when the user wants an issue, not a feed post. Not for a 1,000 character post."
+description: "Draft a LinkedIn newsletter edition from a spine of receipts. Use when the user wants an issue, not a feed post. Not for a 1,000 character post. Use linkedin-post-writer for feed posts."
 ---
 
 # Newsletter drafter
@@ -20,6 +20,8 @@ A newsletter is a letter with a spine. It is not three posts glued together.
 6. Publishing a newsletter is manual unless the user has a custom poster. Say so. Do not pretend Publora posts newsletter editions.
 
 ## Hard rules
+
+Global voice rules: see root SKILL.md Voice rules.
 - No throat-clearing intro.
 - No invented metrics.
 - One ask at the end.

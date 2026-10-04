@@ -344,9 +344,8 @@ class PersonalTemplates(unittest.TestCase):
 
     def test_the_package_copies_are_blank_too(self):
         for name in self.TEMPLATES:
-            packaged = ROOT / ".codex-marketplace" / "linkedin-skills" / name
-            if not packaged.is_file():
-                continue
+            packaged = ROOT / ".codex-marketplace" / "linkedin-manager" / name
+            self.assertTrue(packaged.is_file(), f"missing packaged template: {name}")
             self.assertRegex(packaged.read_text(encoding="utf-8"), self.BLANK,
                              f"the Codex package ships a filled {name}")
 

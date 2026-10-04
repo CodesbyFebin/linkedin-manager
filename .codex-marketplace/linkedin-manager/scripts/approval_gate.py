@@ -17,7 +17,9 @@ BANNED = (
     "thrilled", "game-changer", "game changer", "passionate", "synergy",
 )
 SECRET = re.compile(
-    r"(?i)(api[_-]?key|secret|token|password|sk_live|sk-|ghp_|ghu_|xox[baprs]-|AKIA[0-9A-Z]{16})"
+    r"(?i)(?:\b(?:api[_-]?key|secret|token|password)\s*[:=]\s*[\"']?[^\s\"']{6,}"
+    r"|\b(?:sk_live_|sk-|ghp_|ghu_|xox[baprs]-)[A-Za-z0-9_-]{6,}"
+    r"|\bAKIA[0-9A-Z]{16}\b)"
 )
 URL = re.compile(r"https?://\S+")
 EM = "\u2014"

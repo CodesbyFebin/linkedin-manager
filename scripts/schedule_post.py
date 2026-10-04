@@ -2,7 +2,7 @@
 """CLI: schedule an approved LinkedIn post via Publora at 10:00 local time.
 
 Usage:
-    python scripts/schedule_post.py --file draft.txt --angle <slug> [--source URL ...] [--dry-run]
+    python scripts/schedule_post.py --file draft.txt --angle <slug> [--source URL ...] [--timezone Asia/Kolkata] [--approved] [--dry-run]
     python scripts/schedule_post.py --selftest
 
 Schedule rule: today at 10:00 local. If it is already past 10:00, now + 5 min
@@ -19,6 +19,7 @@ import json
 import sys
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
+from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
@@ -52,6 +53,8 @@ def main() -> int:
     ap.add_argument("--file", help="path to the final post text (UTF-8)")
     ap.add_argument("--angle", default="", help="sub-topic slug used, for rotation logging")
     ap.add_argument("--source", action="append", default=[], help="source URL/title (repeatable)")
+    ap.add_argument("--timezone", default="Asia/Kolkata", help="IANA timezone for the 10:00 slot (default: Asia/Kolkata)")
+    ap.add_argument("--approved", action="store_true", help="Confirm prior explicit approval of this exact text, account, and schedule")
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--selftest", action="store_true")
     args = ap.parse_args()
@@ -69,9 +72,18 @@ def main() -> int:
         print(f"✗ draft is {len(text)} chars, LinkedIn caps posts at 3000", file=sys.stderr)
         return 2
 
-    when = slot(datetime.now().astimezone())
+    try:
+        tz = ZoneInfo(args.timezone)
+    except ZoneInfoNotFoundError:
+        ap.error(f"unknown timezone: {args.timezone}")
+    when = slot(datetime.now(tz))
     scheduled_utc = when.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-    print(f"→ {len(text)} chars, scheduled {when.isoformat()} (UTC {scheduled_utc})")
+    from lib.approval import render_approval_card
+
+    print(render_approval_card(kind="scheduled post", preview_text=text,
+        target_url="https://www.linkedin.com/feed/",
+        extra_context={"schedule": when.isoformat(), "UTC": scheduled_utc,
+                       "account": "LINKEDIN_PLATFORM_ID from configuration"}))
 
     if args.dry_run:
         print("(dry-run, nothing scheduled)")
@@ -82,12 +94,24 @@ def main() -> int:
     load_dotenv(ROOT / ".env")
 
     from lib import active_backend, publish
+    import os
 
     backend = active_backend()
     if backend != "publora":
         print(f"✗ backend is {backend!r}, expected 'publora'. Check PUBLORA_API_KEY "
               f"and LINKEDIN_PLATFORM_ID in .env", file=sys.stderr)
         return 2
+
+    print(f"Account: {os.getenv('LINKEDIN_PLATFORM_ID')}")
+    if not args.approved:
+        try:
+            answer = input("Schedule this exact draft? [yes/no]: ").strip().lower()
+        except (EOFError, OSError):
+            print("Approval required: rerun interactively or pass --approved after explicit approval.", file=sys.stderr)
+            return 2
+        if answer not in {"yes", "y", "post"}:
+            print("Cancelled. Nothing scheduled.")
+            return 0
 
     try:
         resp = publish(
