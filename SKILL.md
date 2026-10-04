@@ -1,11 +1,11 @@
 ---
 name: linkedin-marketing
-description: "Plan, draft, audit, and publish LinkedIn posts and comments. Use when the user wants to write a viral LinkedIn post, draft a comment or reply on any LinkedIn post URL, audit a draft against 2026 algorithm heuristics, remove AI tells, extract hook formulas from viral posts, or plan a week of content. Powered by the Publora API for publishing. User provides post/comment URLs, skill drafts content, user approves, then publishes."
+description: "Plan, draft, audit, and publish LinkedIn posts, comments, carousels, newsletters, and polls. Use for a post, a comment, a reply, a series, a proof post, a connection note for one named person, or a pre-publish gate. Drafts wait for an explicit yes. Nothing sends without approval."
 ---
 
 # LinkedIn Marketing Skills
 
-A bundle of 11 focused skills for LinkedIn content ops in 2026, built for Claude Code and Codex. Each skill is single-purpose, follows the draft → approval → publish pattern, and uses the [Publora API](https://publora.com) for posting.
+A bundle of 21 focused skills for LinkedIn content ops in 2026, built for Claude Code and Codex. Each skill is single-purpose, follows the draft → approval → publish pattern, and uses the [Publora API](https://publora.com) for posting.
 
 ## When to use this bundle
 
@@ -21,6 +21,16 @@ A bundle of 11 focused skills for LinkedIn content ops in 2026, built for Claude
 - **Running an employee advocacy program across a marketing team** → use `linkedin-employee-advocacy`
 - **Adapting content from another platform (tweet, video, blog) into a native LinkedIn post** → use `linkedin-repurposer`
 - **Working out what you actually have to say, or having nothing concrete for a draft to use** → use `linkedin-interviewer`. It interviews you and keeps the answers in `references/story-bank.md`, which every writing skill reads. Start here if you have never posted: the voice profile needs posts you already wrote, the Story Bank only needs a career.
+- **Document or carousel** → use `linkedin-carousel-writer`
+- **Newsletter issue** → use `linkedin-newsletter`
+- **One connection note for a named person** → use `linkedin-connection-note` (refuses lists)
+- **Read pasted analytics** → use `linkedin-analytics-review`
+- **A 4 to 6 post series** → use `linkedin-series-builder`
+- **A proof post from a build log** → use `linkedin-case-receipt`
+- **Three closes for a finished draft** → use `linkedin-cta-lab`
+- **A poll plus companion text** → use `linkedin-poll-writer`
+- **Last check before publish** → use `linkedin-approval-gate`
+
 
 ## Founders edition
 

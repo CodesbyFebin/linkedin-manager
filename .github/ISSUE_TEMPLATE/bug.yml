@@ -1,0 +1,14 @@
+name: Bug
+description: A skill drafted the wrong thing, or a check failed
+title: "[bug] "
+labels: ["bug"]
+body:
+  - type: textarea
+    attributes:
+      label: What happened
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Skill
+      placeholder: linkedin-post-writer

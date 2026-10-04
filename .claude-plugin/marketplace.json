@@ -5,14 +5,14 @@
     "url": "https://github.com/CodesbyFebin"
   },
   "metadata": {
-    "description": "CodesbyFebin LinkedIn Manager. Maintained MIT derivative of Serge Bulaev linkedin-skills v1.1.16: 12 Claude Code and Codex skills for draft-and-approve LinkedIn publishing."
+    "description": "21 Claude Code and Codex skills for LinkedIn: post writer, comment drafter, reply handler, hook extractor, humanizer, profile optimizer, content planner, repurposer, employee advocacy, thread monitor, engager analytics, interviewer, carousel writer, newsletter, connection note, analytics review, series builder, case receipt, CTA lab, poll writer, and approval gate. Draft, then wait for yes."
   },
   "plugins": [
     {
       "name": "linkedin-manager",
       "source": "./",
-      "description": "Bundle of 12 LinkedIn marketing skills for Claude Code and Codex with verified 2026 hook formulas, comment + reply templates that earn author replies, a unified humanizer (rewrite + `--mode audit` pre-publish check, plus bundled emoji-detector, detector-spread tester, rule-explainer sub-tools), profile rewriter, content planner, employee advocacy playbook, thread monitor (warm-reply window author-reply tracking), and engager analytics (likers + commenters ICP segmentation), interviewer (Story Bank of receipts, turning points and positions).",
-      "version": "1.0.0",
+      "description": "21 Claude Code and Codex skills for LinkedIn: post writer, comment drafter, reply handler, hook extractor, humanizer, profile optimizer, content planner, repurposer, employee advocacy, thread monitor, engager analytics, interviewer, carousel writer, newsletter, connection note, analytics review, series builder, case receipt, CTA lab, poll writer, and approval gate. Draft, then wait for yes.",
+      "version": "1.1.0",
       "author": {
         "name": "Febin Francis",
         "url": "https://github.com/CodesbyFebin"
