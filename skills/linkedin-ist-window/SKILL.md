@@ -12,6 +12,8 @@ Timing only. No draft.
 2. Do not invent a peak. Do not promise reach.
 3. Hand the chosen slot to the planner. This skill does not publish.
 
+For a paste format and the clearly labeled default, see [the timing checklist](references/checklist.md).
+
 ## Related
 - `linkedin-approval-gate`
 - `linkedin-humanizer`
